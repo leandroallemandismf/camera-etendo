@@ -11,7 +11,7 @@ function App() {
   })
   
   const device = useCameraDevice('back')
-  const { hasPermission } = useCameraPermission()
+  const { hasPermission, requestPermission } = useCameraPermission()
 
   if (!hasPermission) return requestPermission();
   if (device == null) return <></>
@@ -26,7 +26,3 @@ function App() {
 }
 
 export default App
-
-function requestPermission() {
-  throw new Error("Function not implemented.")
-}
